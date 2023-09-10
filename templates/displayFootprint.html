@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Your Footprint</title>
+        <link rel="stylesheet" href="static/home.css">
+    </head>
+
+    <body>
+
+        <h1 class="footprintTitle">Your Impact</h1>
+    
+        <div class="footprint">
+            <h2 style="color: green; font-size: 50px;">You ate {{ calories }} calories and produced {{ footprint }} KGs of Co2</h1>
+        </div>
+
+        <br>
+        <div class="tips" style="width: 1500px; margin: auto; text-align: center; color: green;">
+            <h2>Tips</h2>
+            {% for tip in tips %}
+                <p>{{ tips.index(tip) + 1 }}. {{ tip }}</p>
+            {% endfor %}
+        </div>
+
+        <a style="margin: 42%;" href=" {{ url_for('home') }} "><button class="startButton" href=>Home</button></a>
+
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href="static/home.css">
+    <head>
+        <title>Calculate Footprint</title>
+    </head>
+    
+    <body>
+        <header>
+           
+            
+        </header>
+
+        <div class="foodList">
+
+            {% for x in range(length) %}
+                <div class="listitem">
+                    <div style="display: flex;">
+                        <h3 class="thing1">{{ x+1 }}.</h3>
+                        <h3 class="thing2">{{ foodList[x] }}</h3>
+                    </div>
+                    <h3 class="thing3">{{ caloriesList[x] }}</h3>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="addFood">
+            <form method="post" action="">
+
+                <label class="foodLabel" for="food">Add Food:</label>
+
+                <select class="foodDropdown" name="food" id="cars">
+                    <option value="Beef">Beef</option>
+                    <option value="Cheese">Cheese</option>
+                    <option value="Poultry">Poultry</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Lamb">Lamb</option>
+                    <option value="Chocolate">Chocolate</option>
+                    <option value="Coffee">Coffee</option>
+                    <option value="Prawns">Prawns</option>
+                    <option value="Pork">Pork</option>
+                    <option value="Eggs">Eggs</option>
+                </select>
+                
+                <input class="foodTextBox" type="number" id="calories" name="calories" placeholder="Calories">
+
+                <button class="addButton">Add</button>
+
+                <br><br>
+
+                <!-- <a href=" {{ url_for('displayFootprint') }} "><button class="startButton" href=>Calculate</button></a> -->
+                
+            </form>
+            <div style="display: flex;"">
+                <a href=" {{ url_for('displayFootprint') }} "><button class="calcButton">Calculate</button></a>
+                <br><br>
+                <a style="margin-left: 250px;" href=" {{ url_for('home') }} "><button class="startButton" href=>Home</button></a>
+            </div>
+        </div>
+
+        <footer>
+        </footer>
+    </body>
+</html>
