@@ -58,7 +58,7 @@ def displayFootprint():
     for i in range(len(foodList)):
         multiply = carbonConversion[foodList[i]]
         caloriesSum += int(caloriesList[i])
-        co2kg = multiply * int(caloriesList[i])
+        co2kg = multiply * int((int(caloriesList[i])/7716))
         carbonSum += co2kg
 
 
